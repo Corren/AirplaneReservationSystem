@@ -12224,11 +12224,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jonat\\Desktop\\WebApplication44\\WebApplication44\\WebApplication44.csproj",
+      "projectUniqueName": "C:\\Users\\jonat\\Documents\\GitHub\\AirplaneReservationSystem\\AirplaneReservation\\WebApplication44\\WebApplication44.csproj",
       "projectName": "WebApplication44",
-      "projectPath": "C:\\Users\\jonat\\Desktop\\WebApplication44\\WebApplication44\\WebApplication44.csproj",
+      "projectPath": "C:\\Users\\jonat\\Documents\\GitHub\\AirplaneReservationSystem\\AirplaneReservation\\WebApplication44\\WebApplication44.csproj",
       "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jonat\\Desktop\\WebApplication44\\WebApplication44\\obj\\",
+      "outputPath": "C:\\Users\\jonat\\Documents\\GitHub\\AirplaneReservationSystem\\AirplaneReservation\\WebApplication44\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
