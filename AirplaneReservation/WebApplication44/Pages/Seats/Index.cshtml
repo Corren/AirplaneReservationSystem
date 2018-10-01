@@ -1,0 +1,131 @@
+﻿@page "{id:int?}"
+@model WebApplication44.Pages.Seats.IndexModel
+@{
+    ViewData["Title"] = "Index";
+
+    int total = 0;
+    int rowNum = 1;
+    List<string> chart = new List<string>();
+    chart.Add("<h1>Seating chart for selected flight - Scroll to the bottom to select seat</h1>");
+    chart.Add("-----Front of the plane----------");
+    chart.Add("<table><tr><th>Row</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Col 1</th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Col 2</th></tr><tr>");
+    foreach (var item in Model.Seat)
+    {
+        if (total % 2 == 0)
+        {
+            chart.Add("<td>" + (rowNum ).ToString());
+            rowNum = rowNum + 1;
+        }
+
+        chart.Add("<td>");
+        chart.Add("");
+        chart.Add("Seat ID:" + (item.SeatId).ToString());
+        chart.Add("Open:" + (item.Available).ToString());
+        chart.Add("First Class:" + (item.FirstClass).ToString());
+
+        chart.Add("</td>");
+        if (total % 2 == 0)
+        {
+            chart.Add("<td>");
+        }
+        else
+        {
+            chart.Add("<td></tr> <tr>");
+        }
+        total = total + 1;
+    }
+    if (total % 2 == 1)
+    {
+        chart.Add("</tr>");
+    }
+    chart.Add("</table>");
+
+}
+
+@foreach (string line in chart)
+{
+    @Html.Raw(line);
+    <br />
+}
+
+
+
+
+<form>
+
+    <table>
+        <tr>
+            <td>FlightID</td>
+
+        </tr>
+        <tr>
+            <td>
+                <select asp-for="SeatFlightId" asp-items="Model.FlightId">
+                    <option value="">All</option>
+                </select>
+            </td>
+
+            <td> &nbsp;<input type="submit" value="Filter" /></td>
+        </tr>
+
+    </table>
+</form>
+@*add me*@
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].SeatId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].Available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].FirstClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].RowNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].ColNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].Flight)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Seat)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeatId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightId)
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-id="@item.SeatId">Details</a>|
+                <a asp-page="/Tickets/Create" asp-route-id="@item.SeatId">Reserve Seat</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

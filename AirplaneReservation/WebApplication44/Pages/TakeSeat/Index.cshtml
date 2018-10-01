@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication44.Pages.TakeSeat.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].Available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].FirstClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].RowNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].ColNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Seat[0].Flight)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Seat) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstClass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ColNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight.FlightId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SeatId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SeatId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SeatId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

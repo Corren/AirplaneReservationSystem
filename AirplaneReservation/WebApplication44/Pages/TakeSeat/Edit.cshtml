@@ -1,0 +1,39 @@
+﻿@page "{id?}"
+@model WebApplication44.Pages.TakeSeat.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>
+    Seat - @RouteData.Values["id"]
+</h4>
+<hr />
+
+<form method="post">
+    <fieldset>
+        <legend>Passenger Information</legend>
+        <input id="SeatNumber" type="hidden" value=@RouteData.Values["id"] />
+
+        <label for="Email">Email</label>
+        <input id="Email" type="email" /><br />
+
+        <label for="FirstName">First name</label>
+        <input id="FirstName" type="text" /><br />
+
+        <label for="LastName">Last name</label>
+        <input id="LastName" type="text" /><br />
+
+        <label for="LastName">DOB</label>
+        <input id="DOB" type="datetime-local" /><br />
+        <input id="Submit1" type="submit" value="submit" />
+    </fieldset>
+
+</form>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+

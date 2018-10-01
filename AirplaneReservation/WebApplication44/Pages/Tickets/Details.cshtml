@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplication44.Pages.Tickets.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.Dob)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.Dob)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.Seat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.Seat.SeatId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Ticket.TicketId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

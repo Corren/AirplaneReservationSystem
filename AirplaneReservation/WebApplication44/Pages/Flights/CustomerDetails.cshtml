@@ -1,0 +1,66 @@
+﻿@page
+@model WebApplication44.Pages.Flights.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Flight Details</h2>
+
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.CapacityFirstClass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.CapacityFirstClass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.CapacityEconomy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.CapacityEconomy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.PriceFirstClass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.PriceFirstClass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.PriceEconomy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.PriceEconomy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.TimeDeparture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.TimeDeparture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.TimeArrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.TimeArrival)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.AirportDeparture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.AirportDeparture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.AirportArrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.AirportArrival)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./CustomerIndex">Back to List</a> |
+    <a asp-page="/Seats/Index" asp-route-SeatFlightId="@Model.Flight.FlightId">View Seats</a> 
+</div>

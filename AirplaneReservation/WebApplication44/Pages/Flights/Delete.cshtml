@@ -1,0 +1,70 @@
+﻿@page
+@model WebApplication44.Pages.Flights.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Flight</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.CapacityFirstClass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.CapacityFirstClass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.CapacityEconomy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.CapacityEconomy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.PriceFirstClass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.PriceFirstClass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.PriceEconomy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.PriceEconomy)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.TimeDeparture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.TimeDeparture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.TimeArrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.TimeArrival)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.AirportDeparture)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.AirportDeparture)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.AirportArrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.AirportArrival)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Flight.FlightId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

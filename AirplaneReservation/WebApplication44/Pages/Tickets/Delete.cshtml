@@ -1,0 +1,52 @@
+﻿@page
+@model WebApplication44.Pages.Tickets.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.Username)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.Username)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.Dob)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.Dob)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ticket.Seat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ticket.Seat.SeatId)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Ticket.TicketId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

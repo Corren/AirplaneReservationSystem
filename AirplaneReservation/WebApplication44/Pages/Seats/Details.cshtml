@@ -1,0 +1,48 @@
+﻿@page
+@model WebApplication44.Pages.Seats.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Seat</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat.Available)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seat.Available)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat.FirstClass)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seat.FirstClass)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat.RowNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seat.RowNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat.ColNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seat.ColNumber)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Seat.Flight)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Seat.Flight.FlightId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Index">Back to Flights</a>
+</div>

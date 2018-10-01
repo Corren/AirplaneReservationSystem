@@ -1,0 +1,88 @@
+﻿@page
+@model WebApplication44.Pages.Flights.CustomerIndexModel
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Reserve Flights</h2>
+
+<form>
+    <table>
+        <tr>
+            <td>Depart</td>
+            <td>&nbsp;</td>
+            <td>Arrive</td>
+        </tr>
+        <tr>
+            <td>
+                <select asp-for="FlightAirportDeparture" asp-items="Model.AirportDeparture">
+                    <option value="">All</option>
+                </select>
+            </td>
+            <td>&nbsp;</td>
+            <td>
+                <select asp-for="FlightAirportArrival" asp-items="Model.AirportArrival">
+                    <option value="">All</option>
+                </select>
+            </td>
+            <td> &nbsp;<input type="submit" value="Filter" /></td>
+        </tr>
+
+    </table>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].AirportDeparture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].AirportArrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].TimeDeparture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].TimeArrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].PriceFirstClass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight[0].PriceEconomy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Flight)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirportDeparture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AirportArrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeDeparture)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeArrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceFirstClass)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PriceEconomy)
+                </td>
+                <td>
+                    <a asp-page="./CustomerDetails" asp-route-id="@item.FlightId">Select</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
